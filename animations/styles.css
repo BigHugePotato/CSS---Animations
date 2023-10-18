@@ -1,0 +1,210 @@
+.lava-lamp::before {
+  content: "";
+  position: absolute;
+  width: 150px;
+  height: 15px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.5), transparent);
+  top: 10px;
+  left: 25px;
+  border-radius: 50%;
+}
+
+.lava-lamp {
+  width: 200px;
+  height: 500px;
+  background: radial-gradient(circle at bottom, #888, #555);
+  border-radius: 100px 100px 50px 50px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
+  border-bottom: 15px solid #444;
+}
+
+.lava-lamp::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 20px;
+  top: 0;
+  left: 0;
+  background: linear-gradient(to bottom, #444, #555); /* A metallic gradient */
+  border-top-left-radius: 100px;
+  border-top-right-radius: 100px;
+}
+
+.blob {
+  position: absolute;
+  background-color: #f00;
+  border-radius: 50%;
+  animation: moveBlobBase;
+  bottom: 0px;
+  left: 50%;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  box-shadow: 0 0 15px 2px rgba(255, 69, 0, 0.7);
+  transition: background-color 0.5s ease, transform 0.5s ease;
+}
+
+@keyframes moveBlobBase {
+  0%,
+  100% {
+    bottom: -30px;
+    background-color: rgba(255, 0, 0, 0.8);
+    transform: scale(
+      1.1,
+      0.9
+    ); /* compress horizontally and stretch vertically at the bottom */
+  }
+  10% {
+    transform: scale(
+      1.1,
+      0.9
+    ); /* returning to the original shape after leaving the bottom */
+  }
+  30%,
+  70% {
+    background-color: rgba(255, 165, 0, 0.8);
+    transform: scale(1, 1); /* original shape in the middle of the motion */
+  }
+  45% {
+    bottom: 450px;
+    background-color: rgba(255, 69, 0, 0.8);
+    transform: scale(
+      1.12,
+      0.92
+    ); /* compress horizontally and stretch vertically at the top */
+  }
+  50% {
+    bottom: 450px;
+    background-color: rgba(255, 69, 0, 0.8);
+    transform: scale(
+      1.15,
+      0.95
+    ); /* returning to the original shape at the peak */
+  }
+  55% {
+    bottom: 450px;
+    background-color: rgba(255, 69, 0, 0.8);
+    transform: scale(
+      1.18,
+      0.98
+    ); /* keep the original shape as it starts descending */
+  }
+  90% {
+    transform: scale(
+      1,
+      1
+    ); /* maintain the original shape before approaching the bottom */
+  }
+}
+
+.blob1 {
+  width: 70px;
+  height: 60px;
+  background: radial-gradient(
+    circle,
+    rgba(255, 69, 0, 0.7),
+    rgba(255, 0, 0, 0.7)
+  );
+  bottom: 50px;
+  left: 15%;
+  animation-duration: 21s, 3s;
+}
+
+.blob2 {
+  width: 40px;
+  height: 50px;
+  background: radial-gradient(
+    circle,
+    rgba(255, 60, 0, 0.9),
+    rgba(255, 69, 0, 0.9)
+  );
+  bottom: 50px;
+  animation-duration: 18s, 3.5s;
+  animation-delay: 1s, 0.5s;
+}
+
+.blob3 {
+  width: 90px;
+  height: 70px;
+  background: radial-gradient(circle, rgba(255, 0, 0, 1), rgba(255, 69, 0, 1));
+  animation-duration: 23s, 2.5s;
+  animation-delay: 3s, 1s;
+}
+
+.blob4 {
+  width: 60px;
+  height: 45px;
+  background: radial-gradient(
+    circle,
+    rgba(255, 69, 0, 0.8),
+    rgba(255, 0, 0, 0.8)
+  );
+  bottom: 0px;
+  left: 25%;
+  animation-duration: 20s, 2.8s;
+  animation-delay: 1s, 0.2s;
+}
+
+.blob5 {
+  width: 80px;
+  height: 90px;
+  background: radial-gradient(
+    circle,
+    rgba(255, 69, 0, 0.6),
+    rgba(255, 0, 0, 0.6)
+  );
+  left: 10%;
+  animation-duration: 25s, 3.2s;
+  animation-delay: 1s, 0.8s;
+  clip-path: ellipse(80% 90% at 50% 50%);
+}
+
+.blob6 {
+  width: 70px;
+  height: 60px;
+  background: radial-gradient(
+    circle,
+    rgba(255, 69, 0, 0.7),
+    rgba(255, 0, 0, 0.7)
+  );
+  animation-duration: 19s, 3s;
+  animation-delay: 2s, 0.6s;
+}
+
+.blob7 {
+  width: 50px;
+  height: 40px;
+  background: radial-gradient(
+    circle,
+    rgba(255, 69, 0, 0.9),
+    rgba(255, 0, 0, 0.9)
+  );
+  left: 80%;
+  animation-duration: 17s, 2.7s;
+  animation-delay: 1s, 0.4s;
+}
+
+.blob8 {
+  width: 60px;
+  height: 70px;
+  background: radial-gradient(
+    circle,
+    rgba(255, 60, 0, 0.9),
+    rgba(255, 0, 0, 0.5)
+  );
+  left: 0%;
+  animation-duration: 20s, 3.7s;
+  animation-delay: 3s, 0.4s;
+}
+
+.blob4,
+.blob6,
+.blob8 {
+  opacity: 0.9;
+}
+
+.blob5,
+.blob7 {
+  opacity: 0.85;
+}
